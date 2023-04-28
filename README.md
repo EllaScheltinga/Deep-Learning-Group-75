@@ -100,7 +100,7 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
   
  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/WhatsApp%20Image%202023-04-28%20at%2023.05.26.jpeg)
   
-# Experiment: Hyperparameter tuning 
+# Experiment: Hyperparameter tuning on NCaltech101
   
   ### Hyperparameter tuning Results: N samples
 
