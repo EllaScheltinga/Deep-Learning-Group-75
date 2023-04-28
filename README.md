@@ -148,23 +148,23 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
    #### Simplification
  Disregarding Asynchronous
  Asynchronousness is the strength of graph data compared to other types of NNs. However it was not possible to explore this propertity due to limited time and resources.
-
-## Future research
-  - Carrying on with the reproducing the AEGNN paper using N-Cars for object detection
-  - Adding the asynchronous property to the event-based Graph Neural Network
   
 ## Conclusion
   The goal of this project was to reproduce the object recognition task with the N-Caltech-101 dataset using a Graph Neural Network as described in the AEGNN paper. The input here are event streams: these are thinned out, processed and converted to graphs where a neural network will then learn to connect the core markers for a specific classification. This method is especially interesting because of the smaller data quantities and computational power required compared to traditional images and associated neural networks. 
   
-  Due to unclarity, errors in the original article and the code and limited computational resources, the original claim of 60% accuracy on the N-Caltech101 dataset was not reproducable. The highest accuracy of 53% was reached with 100 samples, 10 classes, 15 epochs and 8 batches and with high learning rate of 0.1%. For further implementation, it is recommended to secure computational power through cloud computing and further tune learning rate to prevent overfitting that we caught in epoch tuning. 
+  Due to unclarity and errors in the original article and the code and limited computational resources, the original claim of 60% accuracy on the N-Caltech101 dataset was not reproducable. The highest accuracy of 53% was reached with 100 samples, 10 classes, 15 epochs and 8 batches and with high learning rate of 0.1%. For further implementation, it is recommended to secure computational power through cloud computing and further tune learning rate to prevent overfitting that we caught in epoch tuning. 
   
-  The reproducibility using N-Cars was not succeful as the issue with assigning each event stream a label lead to the dataset not being able to be trained. We believe it should be possible, however due to a lack of time and resources we were not able to realise this. 
+  The reproducibility using N-Cars was not succeful as the issue with assigning each event stream a label lead to the dataset not being able to be trained. The paper and code in the repository do not explain how these labels were added to the event stream and this limitation as a result caused it to be difficult to reporoduce. We believe it is possible however, due to missing code this was difficult to do. Overall, the building blocks to use the N-Cars dataset were present, however a lack of explanation resulted in these building blocks not being able to de connected in order to preprocess the N-Cars dataset. 
  
+  
+## Future research
+  - Carrying on with the reproducing the AEGNN paper using N-Cars for object detection
+  - Adding the asynchronous property to the event-based Graph Neural Network
 
 
   
 ## Contributions
-  Mia Choi: Simplification, Implementation, experiment, blog post 
+Mia Choi: Simplification, Implementation, experiment, blog post 
 David Ninfa: Simplification, Implementation, debugging, blog post 
 Ella Scheltinga: Simplification, Implementation, debugging N-Cars dataset, blog post 
 
