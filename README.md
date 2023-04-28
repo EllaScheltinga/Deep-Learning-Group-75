@@ -106,8 +106,14 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 |          Original Authors          |     25000 |       101 |  Unknown |         16 |
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
   
-## Epochs and sample size
-  
+  ### Epochs and sample size
+
+ ### Batch Size
+  | Batch Size | test accuracy |
+  |------------|:-------------:|
+  | 16         |           58% |
+  | 8          |           53% |
+  | 4          |           23% |
 ## Alternative Datasets
   As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. 
   
