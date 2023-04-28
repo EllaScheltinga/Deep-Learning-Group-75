@@ -90,3 +90,11 @@ The N-Cars dataset is an event-based dataset for car classification that contain
 ## Discussion
   
 ## References
+  (N-Caltech)
+  Orchard, G., Jayawant, A., Cohen, G. H., & Thakor, N. V. (2015). Converting Static Image Datasets to Spiking Neuromorphic Datasets Using Saccades. Frontiers in Neuroscience, 9. https://doi.org/10.3389/fnins.2015.00437
+  
+  (AEGNN)
+  Schaefer, S. M., Gehrig, D., & Scaramuzza, D. (2022). AEGNN: Asynchronous Event-based Graph Neural Networks. arXiv (Cornell University). https://doi.org/10.48550/arxiv.2203.17149
+  
+  (N-Cars)
+  Sironi, A., Brambilla, M., Bourdis, N., Lagorce, X., & Benosman, R. (2018). HATS: Histograms of Averaged Time Surfaces for Robust Event-based Object   Classification. arXiv (Cornell University). https://doi.org/10.48550/arxiv.1803.07913
