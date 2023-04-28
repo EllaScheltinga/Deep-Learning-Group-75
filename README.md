@@ -40,7 +40,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 #### Generating graph
   Connect each nodes with edge_index from torch_geometric
   
-#### Create edge attibutes
+#### Creating edge attibutes
 Add Cartesian coordinates of linked nodes in their edge attributes 
 
   
