@@ -69,7 +69,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   
 
 ## Baseline Model
-  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/AEGNN%20Processing%20Steps.png)
+  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/AEGNN%20processing%20full.png)
 ### Graph res
   The Graph res file in the AEGNN repository is used to 
   
