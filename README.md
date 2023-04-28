@@ -54,7 +54,7 @@
   In the AEGNN paper the N-Caltech-101 and N-Cars dataset is used to compare the proposed AEGNN method to other existing methods for object recognition.
   
 ### N-Caltech-101
-  The Neuromorphic Caltech-101 (N-Caltech) dataset, which was created by Orchard G, et. al (2015) is an event-based version of the original static image dataset Caltech-101. The Caltech-101 dataset is a commonly used benchmark dataset used in computer vision tasks. The N-Caltech-101 dataset contains event streams recorded using an event camera with 101 object categories such as butterfly and umbrella in 8246 event sequences that have a duration of 300ms. Cross-entropy loss and a batch-size of 16 was used for training this dataset in the AEGNN paper. (cite AEGNN paper). 
+  The Neuromorphic Caltech-101 (N-Caltech) dataset, which was created by Orchard G, et. al (2015) is an event-based version of the original static image dataset Caltech-101. The Caltech-101 dataset is a commonly used benchmark dataset used in computer vision tasks. The N-Caltech-101 dataset contains event streams recorded using an event camera with 101 object categories such as butterfly and umbrella in 8246 event sequences that have a duration of 300ms. Cross-entropy loss and a batch-size of 16 was used for training this dataset in the AEGNN paper. [[2]](#2) 
   
 ### N-Cars
 The N-Cars dataset is an event-based dataset for car classification that contains real events, which are 12,336 car samples and 11,693 non-car samples (background). These events have 24,029 event sequences each of which had a duration of 100ms. During training the AEGNN paper used cross-entropy loss and a batch-size of 64 for the N-Cars dataset.
