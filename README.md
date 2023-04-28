@@ -51,12 +51,14 @@ Add Cartesian coordinates of linked nodes in their edge attributes
 ## Baseline Model
   ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/Graph%20res.png)
 ### GraphRes
-  The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network used to process the events as spatio-temporal graphs. The neural network has 7 convolution layers and after each convolutional layer there is a batch normalization layer. After this it has a max pooling layer and a fully connected layer. The forward function is also implemented in the GraphRes class and uses the an elu activation function between the layers. This is also depicted in the figure above and more detail can be found in their git repository. 
+The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network used to process the events as spatio-temporal graphs. The neural network has seven convolution layers each followed by a batch normalization layer. After this there is a max pooling layer and a fully connected layer. The forward function is also implemented in the GraphRes class and uses the an elu activation function between the layers as depicted in the figure above. More detail can be found in the author's git repository. 
+
  
 ### RecognitionModel
   ```RecognitionModel``` is the umbrella of all code with the aim in this case to correctly identify an object.
   This class implements ```GraphRes``` network as follows: <br>
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
+   This class implements ```GraphRes``` to construct the networked graphs and incorporates Cross Entrepoy as loss function.
   
 ## Training procedure
  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The hyperparameters has been scaled down for an affordable computation under basic Google Colab python notebook setting: 12.7 GB System RAM, Google colab GPU RAM with CUDA. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1. The loss and adam were not explicitly mentioned in the code because there was no training function present in the code. However, it was mentioned in the paper. The authors implemented decreasing learning rate yet for the sake of simplicity constant learning rate was implemented. Apply the model for the object recognition task. 
@@ -146,10 +148,9 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   
 ## Conclusion
+  The goal of this project was to reproduce Graph Neural Network as described by Simon Schaefer, Daniel Gehrigand Davide Scaramuzza. The input here are event streams: these are thinned out, processed and converted to graphs where a neural network will then learn to connect the core markers for a specific classification. This method is especially interesting because of the smaller data quantities and computational power required compared to traditional images and associated neural networks.
   
 ## Discussion
-  
-  ### checklist
   A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs, especially in pre-processing step. Some of the libraries were outdated and it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
   
    #### Simplification
