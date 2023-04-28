@@ -6,7 +6,7 @@
 
   <p align="center">
     Group Members: <br>
-    David () <br>
+    David Ninfa (4488040) <br>
     Ella Scheltinga (4833856) <br>
     Mia Choi (5401321) 
 
@@ -66,7 +66,17 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   N-Caltech-101 contains binary files with node coordinates.  Figure 2: 3D coordinates in the binary file of umbrella projected in 2D. 
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
   
-<!--   https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png -->
+  Elements: 
+#### Normalize time
+  
+#### subsample
+  
+#### Generate graph(edge index)
+  
+#### Create Edge attributes(Cartesian)
+  
+  
+  
 
 
 ## Baseline Model
