@@ -169,9 +169,9 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
 
   
 ## Contributions
-Mia Choi: Simplification, Implementation, experiment, blog post 
-David Ninfa: Simplification, Implementation, debugging, blog post 
-Ella Scheltinga: Simplification, Implementation, debugging N-Cars dataset, blog post 
+- Mia Choi: Simplification, Implementation, experiment, blog post 
+- David Ninfa: Simplification, Implementation, debugging, blog post 
+- Ella Scheltinga: Simplification, Implementation, debugging N-Cars dataset, blog post 
 
   
 ## References
