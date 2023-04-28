@@ -109,6 +109,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 ## Epochs and sample size
   
 ## Alternative Datasets
+  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. 
   
 ## Results
   
