@@ -35,13 +35,15 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
   
   Elements: 
-#### Normalize time
-  
-#### subsample
-  
+#### Subsample
+  The binary file contains large number of nodes/events. Limit the number of nodes used in the training to a fixed number using fixed point method. 
+ 
 #### Generate graph(edge index)
+  Connect each nodes with edge_index from torch_geometric
   
 #### Create Edge attributes(Cartesian)
+Add Cartesian coordinates of linked nodes in their edge attributes 
+
   
   
   
