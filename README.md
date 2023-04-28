@@ -33,9 +33,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 ## Data pre-processing
   N-Caltech-101 contains binary files with node coordinates.  Figure 2: 3D coordinates in the binary file of umbrella projected in 2D. 
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
-  
-  
-  
+ 
 #### Subsampling
   The binary file contains large number of nodes/events. Limit the number of nodes used in the training to a fixed number using fixed point method. 
  
@@ -44,11 +42,6 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   
 #### Creating edge attibutes
 Add Cartesian coordinates of linked nodes in their edge attributes 
-
-  
-  
-  
-
 
 ## Baseline Model
   ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/Graph%20res.png)
@@ -98,7 +91,7 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
 
 
-## Alternative Datasets
+## Alternative Dataset: N-Cars
   As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file. The preprocessing script of the given repository was not written for N-Cars dataset, which meant we wrote it ourselves. The dataset was already split into a train, test and validation set. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was no code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. This is where we faced the greatest challenge, as this took a lot of time debugging. The reading of the labels and adding this to the data for each sequence was comabined with the pre-processing steps, which also resulted in long computational durations.
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
@@ -150,17 +143,27 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   
 ## Conclusion
-  The goal of this project was to reproduce Graph Neural Network as described by Simon Schaefer, Daniel Gehrigand Davide Scaramuzza. The input here are event streams: these are thinned out, processed and converted to graphs where a neural network will then learn to connect the core markers for a specific classification. This method is especially interesting because of the smaller data quantities and computational power required compared to traditional images and associated neural networks.
+  The goal of this project was to reproduce the object recognition task with the N-Caltech-101 dataset using a Graph Neural Network as described in the AEGNN paper. The input here are event streams: these are thinned out, processed and converted to graphs where a neural network will then learn to connect the core markers for a specific classification. This method is especially interesting because of the smaller data quantities and computational power required compared to traditional images and associated neural networks. 
+  
+  For the N-Caltech dataset ...
+  
+  The reproducibility using N-Cars was not succeful as the issue with assigning each event stream a label lead to the dataset not being able to be trained. We believe it should be possible, however due to a lack of time and resources we were not able to realise this. 
+  
+  (Insert hyper parameter tuning)
+  
   
 ## Discussion
   A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs, especially in pre-processing step. Some of the libraries were outdated and it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
+  
+## Future research
+  - Carrying on with the reproducing the AEGNN paper using N-Cars for object detection
+  - Adding the asynchronous property to the model
+
   
    #### Simplification
  Disregarding Asynchronous
  Asynchronousness is the strength of graph data compared to other types of NNs. However it was not possible to explore this propertity due to limited time and resources.
 
-
-  
   
 ## References
   (N-Caltech) <br>
