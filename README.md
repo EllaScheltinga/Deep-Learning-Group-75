@@ -81,6 +81,10 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   
   
 ## Hyperparameters
+  |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
+|:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
+|          Original Authors          |     25000 |       101 |  Unknown |         16 |
+| (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
   
 ## Epochs and sample size
   
