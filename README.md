@@ -153,6 +153,13 @@ Doubling the number of classes resulted in a 50% increase in training time while
 | 101      | 15.3          |       69% |           12% |
   
   ### Hyperparameter tuning: N Epochs
+  
+  | N Epoch | train acc | test accuracy |
+|---------|-----------|:-------------:|
+| 15      |       49% |           48% |
+| 25      |      100% |          100% |
+| 35      |      100% |          100% |
+  
 After increasing number of epochs to 25, the model shows overfitting behavior in the test. This is due to the high learning rate. In this project, the scope focused on scaled-down, efficient modelling. Thus high learning rate was initially implemented for brief tests whereas the authors of the article had initial lr of 5e-3. 
 * Training accuracy *
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepoch_test.PNG)
