@@ -94,7 +94,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
 
 
 ## Alternative Datasets
-  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file of the type tar.gz, in the given repository no code was given to read this data, which meant we wrote it ourselves. The code was already split into a train, test and validation set. In addition, there was code for loading the data, which took a long time. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was no code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. This is where we faced the greatest challenge, as this took a lot of debugging. The reading of the labels and adding this to the data for each sequence was comabined with the pre-processing steps, which also resulted in long computational durations.
+  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file. The preprocessing script of the given repository was not written for N-Cars dataset, which meant we wrote it ourselves. The dataset was already split into a train, test and validation set. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was no code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. This is where we faced the greatest challenge, as this took a lot of time debugging. The reading of the labels and adding this to the data for each sequence was comabined with the pre-processing steps, which also resulted in long computational durations.
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
   
@@ -109,7 +109,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
 | 5000     | 96.78s        |       37% |           35% |
   
   ### Hyperparameter tuning Results: N classes
-    Test accuracy is relatively lower than train accuracy under all settings. 
+Test accuracy is relatively lower than train accuracy under all settings. 
 classes : umbrella, wheelchair, butterfly… 
 Doubling the number of classes resulted in a 50% increase in training time while the performance metric showed minor changes. Under very small output class size of 10 the gap between train and test was the smallest. 
 
