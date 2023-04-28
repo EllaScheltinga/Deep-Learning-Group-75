@@ -47,6 +47,8 @@
   
   
 ## Scope of reproducibility
+  The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. 
+  
   
 ## Datasets
   In the AEGNN paper the N-Caltech-101 and N-Cars dataset is used to compare the proposed AEGNN method to other existing methods for object recognition.
