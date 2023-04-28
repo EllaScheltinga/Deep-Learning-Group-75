@@ -92,13 +92,14 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
 
 
 ## Alternative Dataset: N-Cars
-  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file of the type .tar.gz. for which there was no code to read the data, however this was easy to implement. The dataset was already split into a train, test and validation set. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was little code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. This is where we faced the greatest challenge, as this took a lot of time debugging.
+ As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file of the type .tar.gz. for which there was no code to read the data, however this was easy to implement. The dataset was already split into a train, test and validation set. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was little code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. The important differnce with the NCaltech101 dataset is that problem is a multi-class problem as with this dataset, the classifactio is binary: a even stream is showing a car (label "1" or True) or whethet it is showing a background without a car (label "0", or _ False_).
   
-The final train accuracy is 0.63 and the final test accuracy is 0.49, which is significantly lower than the 0.945 accuracy that the AEGNN paper proposes. For this result we used 15 epochs, batch size of 10 and ... samples.
+For both the training batch and the validation (test) batch, 500 event streams are used, divided over 10 batches with 15 epochs, as can be seen below. The training proces ended in a 63% accurate objec recognition network, where the validation was left with only 49%. This is significantly lower than what the network performed in the performance of the network with the N-Cars dataset in the AEGNN paper where the accuracy was 0.945.
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
   
  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/WhatsApp%20Image%202023-04-28%20at%2023.05.26.jpeg)
+ ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/WhatsApp%20Image%202023-04-28%20at%2023.07.57.jpeg)
   
 # Experiment: Hyperparameter tuning on NCaltech101
   
@@ -160,7 +161,7 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   Due to unclarity and errors in the original article and the code and limited computational resources, the original claim of 60% accuracy on the N-Caltech101 dataset was not reproducable. The highest accuracy of 53% was reached with 100 samples, 10 classes, 15 epochs and 8 batches and with high learning rate of 0.1%. For further implementation, it is recommended to secure computational power through cloud computing and further tune learning rate to prevent overfitting that we caught in epoch tuning. 
   
-  The reproducibility using N-Cars was succeful to an extent as the preprocessed data could be trained and the result is .... . Overall, most of the building blocks of code to reproduce N-Cars are present, however there are some missing parts which make reproducing difficult.
+  The reproducibility using N-Cars was succeful to an extent as the preprocessed data could be trained and the result is an accuracy 0.49 for the object detection task. Compared to the 0.945 accuracy stated in the AEGNN paper this is significanlty lower, however due to the resources availale there were some limitations, which could have lead to a lower resutl. Overall, most of the building blocks of code to reproduce N-Cars are present, however there are some missing parts which make reproducing difficult.
  
   
 ## Future research
