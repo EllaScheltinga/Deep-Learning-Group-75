@@ -98,12 +98,9 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
   
-## Results
-   A description of the computing infrastructure used
+#Experiment: Hyperparameter tuning 
   
-  
-  
-  ### Hyperparameter tuning: N samples
+  ### Hyperparameter tuning Results: N samples
 
   | Nsamples | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
@@ -111,7 +108,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
 | 1000     | 7.4s          |       51% |           39% |
 | 5000     | 96.78s        |       37% |           35% |
   
-  ### Hyperparameter tuning: N classes
+  ### Hyperparameter tuning Results: N classes
     Test accuracy is relatively lower than train accuracy under all settings. 
 classes : umbrella, wheelchair, butterfly… 
 Doubling the number of classes resulted in a 50% increase in training time while the performance metric showed minor changes. Under very small output class size of 10 the gap between train and test was the smallest. 
@@ -123,7 +120,7 @@ Doubling the number of classes resulted in a 50% increase in training time while
 | 50       | 9.9           |       69% |           17% |
 | 101      | 15.3          |       69% |           12% |
   
-  ### Hyperparameter tuning: N Epochs
+  ### Hyperparameter tuning Results: N Epochs
 After increasing number of epochs to 25, the model shows overfitting behavior in the test. This is due to the high learning rate. In this project, the scope focused on scaled-down, efficient modelling. Thus high learning rate was initially implemented for brief tests whereas the authors of the article had initial lr of 5e-3. 
 * Training accuracy *
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepoch_test.PNG)
@@ -131,7 +128,7 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepochs_train.PNG)
   
 
-  ### Hyperparameter tuning: Batch size
+  ### Hyperparameter tuning Results: Batch size
   Theoretically, a smaller batch size should result in a noisier gradient that might lead to less stable training. However, the test runs showed that the batch size of 8 shows a 5% higher test accuracy. 
   
   | Batch Size | test accuracy |
