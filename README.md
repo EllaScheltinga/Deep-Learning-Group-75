@@ -34,7 +34,6 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   N-Caltech-101 contains binary files with node coordinates.  Figure 2: 3D coordinates in the binary file of umbrella projected in 2D. 
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
   
-  Elements: 
 #### Subsample
   The binary file contains large number of nodes/events. Limit the number of nodes used in the training to a fixed number using fixed point method. 
  
