@@ -96,7 +96,7 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
   
-  (Add results)
+ ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/WhatsApp%20Image%202023-04-28%20at%2023.05.26.jpeg)
   
 # Experiment: Hyperparameter tuning 
   
