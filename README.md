@@ -164,6 +164,10 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   - Carrying on with the reproducing the AEGNN paper using N-Cars for object detection
   - Adding the asynchronous property to the event-based Graph Neural Network
   
+## Contributions
+  David:
+  Ella: N-Cars dataset, blogpost, general debugging
+  Mia: 
   
 ## References
   <a id="1">[1]</a> 
