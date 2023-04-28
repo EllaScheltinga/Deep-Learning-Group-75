@@ -74,6 +74,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   The GraphRes class in the AEGNN repository is the Graph Neural Network used to process the events as spatio-temporal graphs. The neural network has 7 convolution layers and after each convolutional layer there is a batch normalization layer. After this it has a max pooling layer and a fully connected layer. The forward function is also implemented in the GraphRes class and uses the an elu activation function between the layers. This is also depicted in the figure above and more detail can be found in their git repository. 
   
 ### Recognition.py
+  The Recognition model has GraphRes implemented into it because the RecognitionModel uses the network ```graph_res```
   
 ## Training procedure
   
