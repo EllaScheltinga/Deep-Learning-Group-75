@@ -18,7 +18,7 @@
   The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. Furthermore, we carry out hyperparameter tuning and test on a different dataset (N-Cars). For this project we also simplified the method in order for it to be more feasible by disregarding the asynchronous aspect of the AEGNN method with limited computational power. 
   
   
-## Datasets
+## Dataset
   In the AEGNN paper the N-Caltech-101 and N-Cars dataset is used to compare the proposed AEGNN method to other existing methods for object recognition. In order to use the datasets below please download them by using the link provided and make a new folder in the repository called data and add them here. 
   
 ### N-Caltech-101
@@ -33,6 +33,8 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 ## Data pre-processing
   N-Caltech-101 contains binary files with node coordinates.  Figure 2: 3D coordinates in the binary file of umbrella projected in 2D. 
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
+  
+  
   
 #### Subsampling
   The binary file contains large number of nodes/events. Limit the number of nodes used in the training to a fixed number using fixed point method. 
