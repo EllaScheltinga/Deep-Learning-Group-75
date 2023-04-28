@@ -65,9 +65,6 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 ## Data pre-processing
   
 
-## Creating the models
-  
-
 ## Baseline Model
   ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/Graph%20res.png)
 ### Graph res
