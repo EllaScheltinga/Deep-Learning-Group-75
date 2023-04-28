@@ -69,9 +69,9 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   
 
 ## Baseline Model
-  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/AEGNN%20processing%20full.png)
+  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/Graph%20res.png)
 ### Graph res
-  The Graph res file in the AEGNN repository is used to 
+  The GraphRes class in the AEGNN repository is the Graph Neural Network used to process the events as spatio-temporal graphs. The neural network has 7 convolution layers and after each convolutional layer there is a batch normalization layer. After this it has a max pooling layer and a fully connected layer. The forward function is also implemented in the GraphRes class and uses the an elu activation function between the layers. This is also depicted in the figure above and more detail can be found in their git repository. 
   
 ### Recognition.py
   
