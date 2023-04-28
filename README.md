@@ -151,7 +151,11 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   ### checklist
   A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs, especially in pre-processing step. Some of the libraries were outdated and it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
   
-  
+   #### Simplification
+ Disregarding Asynchronous
+ Asynchronousness is the strength of graph data compared to other types of NNs. However it was not possible to explore this propertity due to limited time and resources.
+
+
   
   
 ## References
