@@ -145,7 +145,7 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
 ## Conclusion
   The goal of this project was to reproduce the object recognition task with the N-Caltech-101 dataset using a Graph Neural Network as described in the AEGNN paper. The input here are event streams: these are thinned out, processed and converted to graphs where a neural network will then learn to connect the core markers for a specific classification. This method is especially interesting because of the smaller data quantities and computational power required compared to traditional images and associated neural networks. 
   
-  For the N-Caltech dataset ...
+  Due to unclarity, errors in the original article and the code and limited computational resources, the original claim of 60% accuracy on the N-Caltech101 dataset was not reproducable. The highest accuracy of 53% was reached with 100 samples, 10 classes, 15 epochs and 8 batches and with high learning rate of 0.1%. For further implementation, it is recommended to secure computational power through cloud computing and further tune learning rate to prevent overfitting that we caught in epoch tuning. 
   
   The reproducibility using N-Cars was not succeful as the issue with assigning each event stream a label lead to the dataset not being able to be trained. We believe it should be possible, however due to a lack of time and resources we were not able to realise this. 
   
@@ -165,9 +165,6 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   - Adding the asynchronous property to the event-based Graph Neural Network
   
 ## Contributions
-  David:
-  Ella: N-Cars dataset, blogpost, general debugging
-  Mia: 
   Mia Choi: Simplification, Implementation, experiment, blog post 
 David Ninfa: Simplification, Implementation, debugging, blog post 
 Ella Scheltinga: Simplification, Implementation, debugging N-Cars dataset, blog post 
