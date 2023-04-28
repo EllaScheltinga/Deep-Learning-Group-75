@@ -58,6 +58,9 @@
   
 ### N-Cars
 The N-Cars dataset is an event-based dataset for car classification that contains real events, which are 12,336 car samples and 11,693 non-car samples (background). These events have 24,029 event sequences each of which had a duration of 100ms. During training the AEGNN paper used cross-entropy loss and a batch-size of 64 for the N-Cars dataset.
+  
+  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/N-Caltech%20and%20N-Cars.png)
+  
 
 ## Data pre-processing
   
