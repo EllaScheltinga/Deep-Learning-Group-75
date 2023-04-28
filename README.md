@@ -57,7 +57,7 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
-  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.
+  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1. The choice of loss and optimizer were motivated by the method described in the paper, as no training procedure is present in the git repository. 
   
   ```
   criterion = torch.nn.CrossEntropyLoss().cuda()
