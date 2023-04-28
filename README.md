@@ -77,8 +77,6 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 #### Create Edge attributes(Cartesian)
 Add Cartesian coordinates of linked nodes in their edge attributes 
 
-  
-  d
 
 
 ## Baseline Model
@@ -91,7 +89,8 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
-  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.
+  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1. Apply the model for the object recognition task. The hyperparameters has been scaled down for an affordable computation under basic Google Colab setting: 12.7 GB System RAM, Google colab GPU RAM. 
+
   
   ```
   criterion = torch.nn.CrossEntropyLoss().cuda()
@@ -116,12 +115,13 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   return correct / seen
   ```
   
-## Hyperparameters
+# Experiment: Hyperparameters
+
 
   
-  |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
+|           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
 |:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
-|          Original Authors          |     25000 |       101 |  Unknown |         16 |
+|          Original Authors          |     25000 |       101 |  20+     |         16 |
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
 
 
