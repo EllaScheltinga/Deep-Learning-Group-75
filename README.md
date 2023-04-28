@@ -137,6 +137,8 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
  (insert image) 
   lr = 0.1 too high -> overfitting . authors had 5e-3
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepochs_test.PNG)
+  
+  dafdaf
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepochs_train.PNG)
   
   
