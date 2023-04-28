@@ -56,12 +56,8 @@
 ### N-Caltech-101
   The Neuromorphic Caltech-101 (N-Caltech) dataset, which was created by Orchard G, et. al (2015) is an event-based version of the original static image dataset Caltech-101. The Caltech-101 dataset is a commonly used benchmark dataset used in computer vision tasks. The N-Caltech-101 dataset contains event streams recorded using an event camera with 101 object categories such as butterfly and umbrella in 8246 event sequences that have a duration of 300ms. Cross-entropy loss and a batch-size of 16 was used for training this dataset in the AEGNN paper. [[2]](#2) 
   
-  Link to dataset: https://www.garrickorchard.com/datasets/n-caltech101
-  
 ### N-Cars
 The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classification that contains real events, which are 12,336 car samples and 11,693 non-car samples (background). These events have 24,029 event sequences each of which had a duration of 100ms. [[3]](#3) During training the AEGNN paper used cross-entropy loss and a batch-size of 64 for the N-Cars dataset. [[2]](#2) 
-
-Link to dataset: https://github.com/uzh-rpg/rpg_asynet/issues/20
   
   ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/N-Caltech%20and%20N-Cars.png)
   Figure 1: b) N-Caltech dataset, c) N-Cars dataset
@@ -109,11 +105,13 @@ Link to dataset: https://github.com/uzh-rpg/rpg_asynet/issues/20
   ```
   
 ## Hyperparameters
+
+  
   |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
 |:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
 |          Original Authors          |     25000 |       101 |  Unknown |         16 |
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
-  
+
 
 ## Alternative Datasets
   As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. 
@@ -124,6 +122,7 @@ Link to dataset: https://github.com/uzh-rpg/rpg_asynet/issues/20
   
   
   ### Hyperparameter tuning: N samples
+
   | Nsamples | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
 | 100      | 3.82s         |       49% |           48% |
@@ -131,6 +130,11 @@ Link to dataset: https://github.com/uzh-rpg/rpg_asynet/issues/20
 | 5000     | 96.78s        |       37% |           35% |
   
   ### Hyperparameter tuning: N classes
+    Test accuracy is relatively lower than train accuracy under all settings. 
+classes : umbrella, wheelchair, butterfly… 
+Doubling the number of classes resulted in a 50% increase in training time while the performance metric showed minor changes. Under very small output class size of 10 the gap between train and test was the smallest. 
+
+  
   | Nclasses | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
 | 10       | 2.4           |       49% |           48% |
@@ -138,21 +142,23 @@ Link to dataset: https://github.com/uzh-rpg/rpg_asynet/issues/20
 | 101      | 15.3          |       69% |           12% |
   
   ### Hyperparameter tuning: N Epochs
- (insert image) 
-  lr = 0.1 too high -> overfitting . authors had 5e-3
-    ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepochs_test.PNG)
-  
-  dafdaf
+After increasing number of epochs to 25, the model shows overfitting behavior in the test. This is due to the high learning rate. In this project, the scope focused on scaled-down, efficient modelling. Thus high learning rate was initially implemented for brief tests whereas the authors of the article had initial lr of 5e-3. 
+* Training accuracy *
+    ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepoch_test.PNG)
+ * Test accuracy *
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepochs_train.PNG)
   
-  
- 
+
   ### Hyperparameter tuning: Batch size
+  Theoretically, a smaller batch size should result in a noisier gradient that might lead to less stable training. However, the test runs showed that the batch size of 8 shows a 5% higher test accuracy. 
+  
   | Batch Size | test accuracy |
 |------------|:-------------:|
-| 16         |           48% |
+| 16(Base)   |           48% |
 | 8          |           53% |
 | 4          |           23% |
+  
+  
 ## Conclusion
   
 ## Discussion
