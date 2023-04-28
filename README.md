@@ -5,9 +5,9 @@
 <h3 align="center">AEGNN Paper Reproducibility Blog Post</h3>
 
   <p align="center">
-    Group Members: \n
-    David () \n
-    Ella Scheltinga (4833856) \n
+    Group Members: <br>
+    David () <br>
+    Ella Scheltinga (4833856) <br>
     Mia Choi () 
 
 
