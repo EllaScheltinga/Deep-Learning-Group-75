@@ -47,7 +47,7 @@
   
   
 ## Scope of reproducibility
-  The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. Furthermore, we carry out hyperparameter tuning and test on a different dataset (N-Cars). For this project we also simplified the method in order for it to be more feasible by disregarding the asynchronous aspect of the AEGNN method. 
+  The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. Furthermore, we carry out hyperparameter tuning and test on a different dataset (N-Cars). For this project we also simplified the method in order for it to be more feasible by disregarding the asynchronous aspect of the AEGNN method with limited computational power. 
   
   
 ## Datasets
@@ -63,7 +63,10 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   Figure 1: b) N-Caltech dataset, c) N-Cars dataset
 
 ## Data pre-processing
-  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png =250x250)
+  N-Caltech-101 contains binary files with node coordinates.  Figure 2: 3D coordinates in the binary file of umbrella projected in 2D. 
+  ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
+  
+  
 
 
 ## Baseline Model
