@@ -89,7 +89,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   
   |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
 |:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
-|          Original Authors          |     25000 |       101 |  Unknown |         16 |
+|          Original Authors          |     25000 |       101 |  20+   |         16 |
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
 
 
@@ -98,7 +98,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   
   Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
   
-#Experiment: Hyperparameter tuning 
+# Experiment: Hyperparameter tuning 
   
   ### Hyperparameter tuning Results: N samples
 
@@ -122,6 +122,12 @@ Doubling the number of classes resulted in a 50% increase in training time while
   
   ### Hyperparameter tuning Results: N Epochs
 After increasing number of epochs to 25, the model shows overfitting behavior in the test. This is due to the high learning rate. In this project, the scope focused on scaled-down, efficient modelling. Thus high learning rate was initially implemented for brief tests whereas the authors of the article had initial lr of 5e-3. 
+  | N Epoch | train acc | test accuracy |
+|---------|-----------|:-------------:|
+| 15      |       49% |           48% |
+| 25      |      100% |          100% |
+| 35      |      100% |          100% |
+  
 * Training accuracy *
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepoch_test.PNG)
  * Test accuracy *
