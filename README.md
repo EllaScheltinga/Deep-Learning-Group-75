@@ -118,12 +118,11 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ### Hyperparameter tuning: N Epochs
   
   ### Hyperparameter tuning: Batch size
-
-      | Batch Size | test accuracy |
-      |------------|:-------------:|
-      | 16         |           58% |
-      | 8          |           53% |
-      | 4          |           23% |
+  | Batch Size | test accuracy |
+|------------|:-------------:|
+| 16         |           58% |
+| 8          |           53% |
+| 4          |           23% |
 ## Conclusion
   
 ## Discussion
