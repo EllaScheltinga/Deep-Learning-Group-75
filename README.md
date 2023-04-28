@@ -8,7 +8,7 @@
     Group Members: <br>
     David () <br>
     Ella Scheltinga (4833856) <br>
-    Mia Choi () 
+    Mia Choi (5401321) 
 
 
 
