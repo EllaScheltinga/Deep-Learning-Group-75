@@ -47,7 +47,7 @@
   
   
 ## Scope of reproducibility
-  The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. Furthermore, we carry out hyperparameter tuning and test on a different dataset (N-Cars).
+  The scope of this reproducibility project is limited to reproducing the results from the object recognition task using N-Caltech-101, as shown in table 1 in the AEGNN paper. Furthermore, we carry out hyperparameter tuning and test on a different dataset (N-Cars). For this project we also simplified the method in order for it to be more feasible by disregarding the asynchronous aspect of the AEGNN method. 
   
   
 ## Datasets
@@ -75,7 +75,30 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
+  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.
   
+  ```
+  criterion = torch.nn.CrossEntropyLoss().cuda()
+  rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)
+  optimizer = torch.optim.Adam(rm.parameters(), lr = 0.1)
+  
+  def training(model, data):
+  seen = 0
+  correct = 0
+  
+  for item in iter(data):
+      item = item.to(device)
+      optimizer.zero_grad()
+      out = model.forward(item)
+      loss = criterion(out, item.y)
+      loss.backward()
+      pred = out.max(dim=1)[1]
+      seen += len(item)
+      correct += pred.eq(item.y).sum().item()
+      optimizer.step()
+
+  return correct / seen
+  ```
   
 ## Hyperparameters
   |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
