@@ -9,38 +9,6 @@
     David Ninfa (4488040) <br>
     Ella Scheltinga (4833856) <br>
     Mia Choi (5401321) 
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-## Introduction
-  
-  
   
 ## Overview of Paper
   The AEGNN paper proposes a novel method for event-processing using Asynchronous Event-based Graph Neural Networks. Graph Neural Networks process events as static spatio-temporal graphs, which are sparsely distributed. Introducing Asynchronous Event-based Graph Neural Networks they aim to process events as evolving spatio-temporal graphs. The AEGNN method can efficiently update because the recomputation of the network activations is restricted to only the nodes affected by a new event. The AEGNN paper validates its method using object recognition and detection tasks. In this paper, object recognition pertains to predicting an object class from the event stream and object detection refers to classifying and detecting object bounding boxes from an event stream. 
@@ -51,7 +19,7 @@
   
   
 ## Datasets
-  In the AEGNN paper the N-Caltech-101 and N-Cars dataset is used to compare the proposed AEGNN method to other existing methods for object recognition.
+  In the AEGNN paper the N-Caltech-101 and N-Cars dataset is used to compare the proposed AEGNN method to other existing methods for object recognition. In order to use the datasets below please download them by using the link provided and make a new folder in the repository called data and add them here. 
   
 ### N-Caltech-101
   The Neuromorphic Caltech-101 (N-Caltech) dataset, which was created by Orchard G, et. al (2015) is an event-based version of the original static image dataset Caltech-101. The Caltech-101 dataset is a commonly used benchmark dataset used in computer vision tasks. The N-Caltech-101 dataset contains event streams recorded using an event camera with 101 object categories such as butterfly and umbrella in 8246 event sequences that have a duration of 300ms. Cross-entropy loss and a batch-size of 16 was used for training this dataset in the AEGNN paper. [[2]](#2) 
@@ -67,16 +35,16 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ![alt text](  https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/umbrella_bin.png)
   
   Elements: 
-
-#### Subsample
-  The binary file contains large number of nodes/events. Limit the number of nodes used in the training to a fixed number using fixed point method. 
- 
+#### Normalize time
+  
+#### subsample
+  
 #### Generate graph(edge index)
-  Connect each nodes with edge_index from torch_geometric
   
 #### Create Edge attributes(Cartesian)
-Add Cartesian coordinates of linked nodes in their edge attributes 
-
+  
+  
+  
 
 
 ## Baseline Model
@@ -89,8 +57,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
-  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The hyperparameters has been scaled down for an affordable computation under basic Google Colab python notebook setting: 12.7 GB System RAM, Google colab GPU RAM with CUDA. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.The authors implemented decreasing learning rate yet for the sake of simplicity constant learning rate was implemented. Apply the model for the object recognition task. 
-
+  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.
   
   ```
   criterion = torch.nn.CrossEntropyLoss().cuda()
@@ -115,17 +82,20 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   return correct / seen
   ```
   
-# Experiment: Hyperparameters
-
+## Hyperparameters
 
   
-|           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
+  |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
 |:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
-|          Original Authors          |     25000 |       101 |  20+     |         16 |
+|          Original Authors          |     25000 |       101 |  Unknown |         16 |
 | (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
 
 
-
+## Alternative Datasets
+  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. The data was encoded in a binary file of the type tar.gz, in the given repository no code was given to read this data, which meant we wrote it ourselves. The code was already split into a train, test and validation set. In addition, there was code for loading the data, which took a long time. The pre-processing steps were very similar compared to the N-Caltech-101 dataset, therefore required minimal time. There was code provided to read the labels of the data, although there was no code implementation or guidance given on how to add labels to the given data sequences in order to train the data using these labels. This is where we faced the greatest challenge, as this took a lot of debugging. The reading of the labels and adding this to the data for each sequence was comabined with the pre-processing steps, which also resulted in long computational durations.
+  
+  Overall, debugging took longer with this dataset because every time you had to restart the kernel in the google collab environment you had to load the entire dataset and this takes around 10mins. Only after this can you scale down the dataset in order to debug faster. Even after this scaling down step the ```pre_transform_all``` function takes very long. Furthermore, a lot of code that was used for N-Caltech-101 was transferable to N-Cars and the basic code given for reading and loading the code was also provided. 
+  
 ## Results
    A description of the computing infrastructure used
   
@@ -139,7 +109,6 @@ Add Cartesian coordinates of linked nodes in their edge attributes
 | 1000     | 7.4s          |       51% |           39% |
 | 5000     | 96.78s        |       37% |           35% |
   
- 
   ### Hyperparameter tuning: N classes
     Test accuracy is relatively lower than train accuracy under all settings. 
 classes : umbrella, wheelchair, butterfly… 
@@ -153,13 +122,6 @@ Doubling the number of classes resulted in a 50% increase in training time while
 | 101      | 15.3          |       69% |           12% |
   
   ### Hyperparameter tuning: N Epochs
-  
-  | N Epoch | train acc | test accuracy |
-|---------|-----------|:-------------:|
-| 15      |       49% |           48% |
-| 25      |      100% |          100% |
-| 35      |      100% |          100% |
-  
 After increasing number of epochs to 25, the model shows overfitting behavior in the test. This is due to the high learning rate. In this project, the scope focused on scaled-down, efficient modelling. Thus high learning rate was initially implemented for brief tests whereas the authors of the article had initial lr of 5e-3. 
 * Training accuracy *
     ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/nepoch_test.PNG)
@@ -176,8 +138,6 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
 | 8          |           53% |
 | 4          |           23% |
   
- # Experiment: Alternative Datasets
-  As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. 
   
 ## Conclusion
   
@@ -185,17 +145,6 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   ### checklist
   A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs. As it was outdated, it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
-  
-  ### Limitations and further implementations
-  
-  #### Limited computational resource
-  Opt ...
-
-  
-  #### Simplification
-  Disregarding Asynchronous
-  Asynchronousness is the strength of graph data compared to other types of NNs. However it was not possible to explore this propertity due to limited time and resources. 
-  
   
   
   
