@@ -52,9 +52,10 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   ![alt text](https://github.com/EllaScheltinga/Deep-Learning-Group-75/blob/main/Graph%20res.png)
 ### GraphRes
   The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network used to process the events as spatio-temporal graphs. The neural network has 7 convolution layers and after each convolutional layer there is a batch normalization layer. After this it has a max pooling layer and a fully connected layer. The forward function is also implemented in the GraphRes class and uses the an elu activation function between the layers. This is also depicted in the figure above and more detail can be found in their git repository. 
-  
+ 
 ### RecognitionModel
-  The ```RecognitionModel``` class has the ```GraphRes``` class implemented into it as shown in our code where we define rm: <br>
+  ```RecognitionModel``` is the umbrella of all code with the aim in this case to correctly identify an object.
+  This class implements ```GraphRes``` network as follows: <br>
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
