@@ -111,6 +111,10 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   As an extra criteria we tried to implement the AEGNN method on another dataset N-Cars to compare with N-Caltech. 
   
 ## Results
+   A description of the computing infrastructure used
+  
+  
+  
   ### Hyperparameter tuning: N samples
   | Nsamples | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
@@ -138,6 +142,12 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
 ## Conclusion
   
 ## Discussion
+  
+  ### checklist
+  A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs. As it was outdated, it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
+  
+  
+  
   
 ## References
   (N-Caltech) <br>
