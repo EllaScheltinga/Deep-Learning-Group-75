@@ -58,7 +58,8 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
-  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1. The choice of loss and optimizer were motivated by the method described in the paper, as no training procedure is present in the git repository. 
+ The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The hyperparameters has been scaled down for an affordable computation under basic Google Colab python notebook setting: 12.7 GB System RAM, Google colab GPU RAM with CUDA. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.The authors implemented decreasing learning rate yet for the sake of simplicity constant learning rate was implemented. Apply the model for the object recognition task. 
+
   
   ```
   criterion = torch.nn.CrossEntropyLoss().cuda()
