@@ -114,18 +114,25 @@ The Neuromorphic Cars (N-Cars) dataset is an event-based dataset for car classif
   ### Hyperparameter tuning: N samples
   | Nsamples | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
-| 100      | 3.82s         |       93% |           93% |
+| 100      | 3.82s         |       49% |           48% |
 | 1000     | 7.4s          |       51% |           39% |
 | 5000     | 96.78s        |       37% |           35% |
   
   ### Hyperparameter tuning: N classes
+  | Nclasses | time(s)/epoch | train acc | test accuracy |
+|----------|---------------|-----------|:-------------:|
+| 10       | 2.4           |       49% |           48% |
+| 50       | 9.9           |       69% |           17% |
+| 101      | 15.3          |       69% |           12% |
   
   ### Hyperparameter tuning: N Epochs
-  
+ (insert image) 
+  lr = 0.1 too high -> overfitting . authors had 5e-3
+ 
   ### Hyperparameter tuning: Batch size
   | Batch Size | test accuracy |
 |------------|:-------------:|
-| 16         |           58% |
+| 16         |           48% |
 | 8          |           53% |
 | 4          |           23% |
 ## Conclusion
