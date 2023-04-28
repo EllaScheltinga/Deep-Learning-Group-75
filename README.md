@@ -156,11 +156,10 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   Due to unclarity and errors in the original article and the code and limited computational resources, the original claim of 60% accuracy on the N-Caltech101 dataset was not reproducable. The highest accuracy of 53% was reached with 100 samples, 10 classes, 15 epochs and 8 batches and with high learning rate of 0.1%. For further implementation, it is recommended to secure computational power through cloud computing and further tune learning rate to prevent overfitting that we caught in epoch tuning. 
   
-  The reproducibility using N-Cars was not succeful as the issue with assigning each event stream a label lead to the dataset not being able to be trained. The paper and code in the repository do not explain how these labels were added to the event stream and this limitation as a result caused it to be difficult to reporoduce. We believe it is possible however, due to missing code this was difficult to do. Overall, the building blocks to use the N-Cars dataset were present, however a lack of explanation resulted in these building blocks not being able to de connected in order to preprocess the N-Cars dataset. 
+  The reproducibility using N-Cars was succeful to an extent as the preprocessed data could be trained and the result is .... . Overall, most of the building blocks of code to reproduce N-Cars are present, however there are some missing parts which make reproducing difficult.
  
   
 ## Future research
-  - Carrying on with the reproducing the AEGNN paper using N-Cars for object detection
   - Adding the asynchronous property to the event-based Graph Neural Network
 
 
