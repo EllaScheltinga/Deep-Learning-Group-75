@@ -87,8 +87,8 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
   
   |           Hyperparameters          | N_samples | N_Classes | N_Epochs | Batch size |
 |:----------------------------------:|:---------:|:---------:|:--------:|:----------:|
-|          Original Authors          |     25000 |       101 |  20+   |         16 |
-| (Simplified) Reproduction Baseline |       100 |        10 |       15 |         16 |
+|          Original Authors          |     25000 |       101 |  20+ (slow decay)  |         16 |
+| (Simplified) Reproduction Baseline |       100 |        10 |       15 (constant) |         16 |
 
 
 ## Alternative Dataset: N-Cars
@@ -102,6 +102,8 @@ The ```GraphRes``` class in the AEGNN repository is the Graph Neural Network use
   
   ### Hyperparameter tuning Results: N samples
 
+  Amount of nodes to be sampled from each timeframe, fixed. 
+  
   | Nsamples | time(s)/epoch | train acc | test accuracy |
 |----------|---------------|-----------|:-------------:|
 | 100      | 3.82s         |       49% |           48% |
