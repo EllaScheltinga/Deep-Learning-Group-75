@@ -5,7 +5,10 @@
 <h3 align="center">AEGNN Paper Reproducibility Blog Post</h3>
 
   <p align="center">
-    project_description
+    Group Members:
+    David ()
+    Ella Scheltinga (4833856)
+    Mia Choi ()
 
 
 
