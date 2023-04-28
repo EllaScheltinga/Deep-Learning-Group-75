@@ -89,7 +89,7 @@ Add Cartesian coordinates of linked nodes in their edge attributes
   ```rm = RecognitionModel(network="graph_res", dataset="ncaltech101", num_classes=NUM_CLASSES, img_shape=(240,180)).to(device)```
   
 ## Training procedure
-  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1. Apply the model for the object recognition task. The hyperparameters has been scaled down for an affordable computation under basic Google Colab setting: 12.7 GB System RAM, Google colab GPU RAM. 
+  The training procedure as shown below shows that we use the recognition model defined here as model from recognition.py in order to train. The hyperparameters has been scaled down for an affordable computation under basic Google Colab python notebook setting: 12.7 GB System RAM, Google colab GPU RAM with CUDA. The loss criterion is defined as cross entropy loss and the optimizer used is Adam, with a learning rate of 0.1.The authors implemented decreasing learning rate yet for the sake of simplicity constant learning rate was implemented. Apply the model for the object recognition task. 
 
   
   ```
@@ -185,6 +185,17 @@ After increasing number of epochs to 25, the model shows overfitting behavior in
   
   ### checklist
   A clear description of the setting, algorithm and models were included in the papaer. However, most assumptions are not identified in the article but in the github repository. The authors used popular datasets thus the dataset themselves had clear statistics and explanation. The article mentions the details of splits however the pre-processing steps were vaguly explained. The code on the repository was outdated and had a few bugs. As it was outdated, it was challenging to set the correct environment and establish dependencies. We were able to find a forked repositor ycontaining old scripts for traning and evaluation however had to redesign the training and evaluation framework again. It was hard to track reasonings behind the authors' selection on the hyper-parameters. 
+  
+  ### Limitations and further implementations
+  
+  #### Limited computational resource
+  Opt ...
+
+  
+  #### Simplification
+  Disregarding Asynchronous
+  Asynchronousness is the strength of graph data compared to other types of NNs. However it was not possible to explore this propertity due to limited time and resources. 
+  
   
   
   
